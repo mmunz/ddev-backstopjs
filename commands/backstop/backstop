@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#ddev-generated
+
+## Description: Run backstop
+## Usage: backstop [args]
+## Example: "ddev backstop version"
+## ExecRaw: true
+
+if [ "$1" == "openReport" -o "$1" == "remote" ]; then
+  echo "This does not work for backstop in ddev"
+  exit 1
+fi
+
+NODE_PATH="/usr/local/lib/node_modules/" backstop "$@"

@@ -24,9 +24,9 @@ teardown() {
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ${DIR}
   ddev restart
-  # Do something here to verify functioning extra service
-  # For extra credit, use a real CMS with actual config.
-  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
+  ddev backstop version | grep 'Command "version" successfully executed'
+  ddev backstop openReport | grep 'This does not work for backstop in ddev"
+  ddev backstop remote | grep 'This does not work for backstop in ddev"
 }
 
 #@test "install from release" {

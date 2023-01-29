@@ -1,7 +1,7 @@
 name: ddev-backstopjs
 
 pre_install_actions:
-  - test -d ${DDEV_APPROOT}/tests/backstop || mkdir ${DDEV_APPROOT}/tests/backstop
+  - test -d ${DDEV_APPROOT}/tests/backstop || mkdir -p ${DDEV_APPROOT}/tests/backstop
   - test -f "${DDEV_APPROOT}/tests/backstop/.gitignore" || echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
   - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstop/.gitignore && echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
 

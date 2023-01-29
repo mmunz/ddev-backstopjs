@@ -29,12 +29,12 @@ teardown() {
   # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
 }
 
-@test "install from release" {
-  set -eu -o pipefail
-  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get drud/ddev-addon-template with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get drud/ddev-addon-template
-  ddev restart >/dev/null
-  # Do something useful here that verifies the add-on
-  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-}
+#@test "install from release" {
+#  set -eu -o pipefail
+#  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
+#  echo "# ddev get drud/ddev-addon-template with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+#  ddev get drud/ddev-addon-template
+#  ddev restart >/dev/null
+#  # Do something useful here that verifies the add-on
+#  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
+#}

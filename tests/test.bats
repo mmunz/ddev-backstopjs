@@ -25,8 +25,8 @@ teardown() {
   ddev get ${DIR}
   ddev restart
   ddev backstop version | grep 'Command "version" successfully executed'
-  ddev backstop openReport | grep 'This does not work for backstop in ddev"
-  ddev backstop remote | grep 'This does not work for backstop in ddev"
+  ddev backstop openReport | grep 'This does not work for backstop in ddev'
+  ddev backstop remote | grep 'This does not work for backstop in ddev'
 }
 
 #@test "install from release" {

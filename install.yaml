@@ -1,6 +1,8 @@
 name: ddev-backstopjs
 
-
+pre_install_actions:
+  - test -d ${DDEV_APPROOT}/tests/backstop || mkdir ${DDEV_APPROOT}/tests/backstop
+  - test -f ${DDEV_APPROOT}/tests/backstop/.gitignore || echo "## ddev-generated\n**/bitmaps_test\n/tests/**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
 
 # list of files and directories listed that are copied into project .ddev directory
 # Each file should contain #ddev-generated so it can be replaced by a later `ddev get`
@@ -9,23 +11,7 @@ name: ddev-backstopjs
 project_files:
 - docker-compose.backstop.yaml
 - backstopBuild/
+- commands/
 
-# List of files and directories that are copied into the global .ddev directory
-# DDEV environment variables can be interpolated into these filenames
-global_files:
-# - commands
-# - homeadditions
-
-# DDEV environment variables can be interpolated into these actions
 post_install_actions:
-# - chmod +x ~/.ddev/commands/web/somecommand
-# - touch somefile.${GOOS}.${DDEV_WEBSERVER}
-# - perl -pi -e 's/oldstring/newstring/g' docker-compose.addon-template.yaml
-
-# Advanced usage - yaml files can be read in and then used as go template actions
-# in pre_install_actions and post_install_actions
-# See example in
-# https://github.com/rfay/ddev/blob/20220606_yaml_read_experiment/cmd/ddev/cmd/testdata/TestCmdGetComplex/recipe/install.yaml
-yaml_read_files:
-# someyaml: someyaml.yaml
-# otheryaml: someotheryaml.yaml
+ - ddev backstop init

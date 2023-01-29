@@ -2,8 +2,8 @@ name: ddev-backstopjs
 
 pre_install_actions:
   - test -d ${DDEV_APPROOT}/tests/backstop || mkdir ${DDEV_APPROOT}/tests/backstop
-  - IGNOREFILE="${DDEV_APPROOT}/tests/backstop/.gitignore" test -f $IGNOREFILE || echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > $IGNOREFILE
-  - IGNOREFILE="${DDEV_APPROOT}/tests/backstop/.gitignore" grep -q "## ddev-generated" $IGNOREFILE && echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > $IGNOREFILE
+  - test -f ${DDEV_APPROOT}/tests/backstop/.gitignore" || echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore"
+  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstop/.gitignore" && echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
 
 
 # list of files and directories listed that are copied into project .ddev directory

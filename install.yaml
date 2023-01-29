@@ -2,8 +2,8 @@ name: ddev-backstopjs
 
 pre_install_actions:
   - test -d ${DDEV_APPROOT}/tests/backstop || mkdir ${DDEV_APPROOT}/tests/backstop
-  - test -f ${DDEV_APPROOT}/tests/backstop/.gitignore" || echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore"
-  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstop/.gitignore" && echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
+  - test -f "${DDEV_APPROOT}/tests/backstop/.gitignore" || echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
+  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstop/.gitignore && echo "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstop/.gitignore
 
 
 # list of files and directories listed that are copied into project .ddev directory
@@ -13,7 +13,8 @@ pre_install_actions:
 project_files:
 - docker-compose.backstop.yaml
 - backstopBuild/
-- commands/
+- commands/backstop/backstop
 
 post_install_actions:
- - ddev backstop init
+ - echo "Install finished. Please restart ddev with 'ddev restart'"
+ - echo "After that create your backstop config, e.g. run ddev backstop init."

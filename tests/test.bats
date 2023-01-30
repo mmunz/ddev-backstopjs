@@ -24,8 +24,11 @@ teardown() {
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ${DIR}
   ddev restart
+
+  # backstop is installed and can show its version
   ddev backstop version | grep 'Command "version" successfully executed'
 
+  # openReport and remote commands show an error message
   set +o pipefail
   ddev backstop openReport | grep -q 'This does not work for backstop in ddev'
   ddev backstop remote | grep -q 'This does not work for backstop in ddev'

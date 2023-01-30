@@ -3,7 +3,7 @@
 
 routerIp=$(getent hosts ddev-router | awk '{ print $1 }')
 
-# Add entries to /etc/hosts for each DDEV_HOSTNAME
+# Add entries to /etc/hosts for each DDEV_HOSTNAME (all hostnames in the web container)
 if [ -n "$routerIp" ]; then
   OIFS=$IFS
   IFS=','

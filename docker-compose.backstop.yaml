@@ -34,4 +34,4 @@ services:
       ddev_default: null
       default: null
     # external_links:
-    #   - anotherhost.ddev.site:ddev-router
+    #   - ddev-router:anotherhost.ddev.site

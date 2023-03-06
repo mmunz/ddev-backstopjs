@@ -88,3 +88,12 @@ The entrypoint is responsible for:
 If you want to test hosts not configured in the web container, you need to use external_links in
 [docker-compose.backstop.js](docker-compose.backstop.js). Do not forget to remove the #ddev-generated line!
 See: [https://ddev.readthedocs.io/en/latest/users/usage/faq/#features-requirements](ddev FAQ: Can different projects communicate with each other?)
+
+### Change backstop tests directory
+Per default the backstop directory containing backstop config etc. is expected in your project directory (besides the
+.ddev folder) in the directory *tests/backstop*.
+
+If you want to change that edit the file [docker-compose.backstop.yaml](docker-compose.backstop.yaml) and
+change the line in volumes to the path you want to use, move the files to the new directory and restart ddev.
+
+Make sure to remove the #ddev-generated line from the file to prevent ddev from maging changes to it.

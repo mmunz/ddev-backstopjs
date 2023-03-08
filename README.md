@@ -29,7 +29,7 @@ By default, the backstop tests are expected in $DDEV_APPDIR/tests/backstop.
 
 Provide your own backstop.js or backstop.json configs here.
 
-Hint: have a look at the config the author uses: [https://github.com/mmunz/backstopjs-config](backstopjs-config) 
+Hint: have a look at the config the author uses: https://github.com/mmunz/backstopjs-config 
 
 Alternatively you can create a simple backstop.json config with:
 

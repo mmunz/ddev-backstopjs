@@ -66,7 +66,7 @@ open tests/backstop/backstop_data/_mytestproject_/html_report/index.html
 
 ## Changes to the original docker image
 
-The backstopjs docker image is extended with some functions using a custom docker build, see An [backstopBuild/Dockerfile](Dockerfile)
+The backstopjs docker image is extended with some functions using a custom docker build, see [backstopBuild/Dockerfile](Dockerfile)
 and uses a custom [backstopBuild/entrypoint.sh](entrypoint).
 
 In the Dockerfile the following is added/changed:

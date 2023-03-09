@@ -27,7 +27,7 @@ ddev restart
 
 By default, the backstop tests are expected in $DDEV_APPDIR/tests/backstop.
 
-Provide your own backstop.js or backstop.json configs here.
+Provide your own backstop.js or backstop.json configs there.
 
 Hint: have a look at my example [backstopjs-config](https://github.com/mmunz/backstopjs-config) 
 
@@ -96,4 +96,4 @@ Per default the backstop directory containing backstop config etc. is expected i
 If you want to change that edit the file [docker-compose.backstop.yaml](docker-compose.backstop.yaml) and
 change the line in volumes to the path you want to use, move the files to the new directory and restart ddev.
 
-Make sure to remove the #ddev-generated line from the file to prevent ddev from maging changes to it.
+Make sure to remove the #ddev-generated line from the file to prevent ddev from making changes to it.

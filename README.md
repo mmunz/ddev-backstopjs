@@ -86,8 +86,11 @@ The entrypoint is responsible for:
 ### How to add additional hostnames?
 
 If you want to test hosts not configured in the web container, you need to use external_links in
-[docker-compose.backstop.yaml](docker-compose.backstop.yaml). Do not forget to remove the #ddev-generated line!
-See: [https://ddev.readthedocs.io/en/latest/users/usage/faq/#features-requirements](ddev FAQ: Can different projects communicate with each other?)
+[docker-compose.backstop.yaml](docker-compose.backstop.yaml).
+
+See: [ddev FAQ: Can different projects communicate with each other?](https://ddev.readthedocs.io/en/latest/users/usage/faq/#features-requirements)
+
+Do not forget to remove the #ddev-generated line!
 
 ### Change backstop tests directory
 Per default the backstop directory containing backstop config etc. is expected in your project directory (besides the

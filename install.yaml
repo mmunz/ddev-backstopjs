@@ -14,6 +14,7 @@ project_files:
 - docker-compose.backstop.yaml
 - backstopBuild/
 - commands/backstop/backstop
+- commands/host/backstop-results
 
 post_install_actions:
  - echo "Install finished. Please restart ddev with 'ddev restart'"

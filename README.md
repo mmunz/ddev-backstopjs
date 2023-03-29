@@ -21,6 +21,10 @@ After that you need to restart the ddev project:
 ddev restart
 ```
 
+**Note: If you haven't downloaded the backstopjs base image before, then it will be downloaded when ddev is restarted.
+The backstopjs/backstopjs is about 2.6GB, so this may take some time.
+
+
 ## Using backstopjs
 
 ### Configuration

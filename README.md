@@ -5,7 +5,8 @@
 This is a ddev-addon for [backstop.js](https://github.com/garris/BackstopJS), a visual regression testing tool.
 Backstop is executed in a docker container based on the official [backstopjs docker image](https://hub.docker.com/r/backstopjs/backstopjs).
 
-This addon just provides tha basics to run backstopjs. No backstopjs config is included.
+This addon just provides the basics to run backstopjs. No backstopjs config is included. See below how to generate a
+config and for links to a more advanced example config.
 
 ## Getting started
 
@@ -22,7 +23,7 @@ ddev restart
 ```
 
 **Note: If you haven't downloaded the backstopjs base image before, then it will be downloaded when ddev is restarted.
-The backstopjs/backstopjs is about 2.6GB, so this may take some time.
+The backstopjs/backstopjs is about 2.6GB, so this may take some time.**
 
 
 ## Using backstopjs

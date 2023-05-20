@@ -61,14 +61,19 @@ If your config file is not 'backstop.json' you need to use the --config argument
 
 ### View test results
 
-The backstop commands 'backstop remote' and 'backstop openReport' do not work in this setup (PR welcome!),
-instead just open the generated HTML-Report with your browser, e.g.:
+The backstop commands 'backstop remote' and 'backstop openReport' do not work in this setup.
+
+But there is a host command that will open the latest test report in your default browser:
+
+```shell
+ddev backstop-results
+```
+
+Alternatively open the generated HTML-Report with your browser, e.g.:
 
 ```shell
 open tests/backstop/backstop_data/_mytestproject_/html_report/index.html 
 ```
-
-A ddev `host` command exists to open the latest report in your default browser: `ddev backstop-results`
 
 ## Changes to the original docker image
 

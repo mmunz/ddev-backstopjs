@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#ddev-generated
+
 ## Description: Launch a browser with latest backstop results
 ## Usage: backstop-results
 ## Example: "ddev backstop-results"

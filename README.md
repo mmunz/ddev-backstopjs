@@ -68,6 +68,8 @@ instead just open the generated HTML-Report with your browser, e.g.:
 open tests/backstop/backstop_data/_mytestproject_/html_report/index.html 
 ```
 
+A ddev `host` command exists to open the latest report in your default browser: `ddev backstop-results`
+
 ## Changes to the original docker image
 
 The backstopjs docker image is extended with some functions using a custom docker build, see [Dockerfile](backstopBuild/Dockerfile)

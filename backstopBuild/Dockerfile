@@ -17,3 +17,6 @@ RUN (groupadd --gid $gid "$username" || groupadd "$username" || true) && (userad
 RUN apt update && apt install -y sudo; apt clean -qq && rm -rf /var/lib/apt/lists/*; echo "ALL ALL=NOPASSWD: ALL" > /etc/sudoers.d/ddev-backstop && chmod 440 /etc/sudoers.d/ddev-backstop
 
 RUN npm install -g minimist
+
+# Install playwright browsers
+RUN npx playwright install-deps && npm cache clean --force; apt clean -qq && rm -rf /var/lib/apt/lists/*

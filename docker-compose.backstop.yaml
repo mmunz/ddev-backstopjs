@@ -13,8 +13,8 @@ services:
       args:
         BASE_IMAGE: backstopjs/backstopjs:6.2.2
         username: $USER
-        uid: $DDEV_GID
-        gid: $DDEV_UID
+        uid: $DDEV_UID
+        gid: $DDEV_GID
     image: backstopjs/backstopjs:6.2.2-${DDEV_SITENAME}-built
     user:  '$DDEV_UID:$DDEV_GID'
     # Add init to reap Chrome processes, as noted at

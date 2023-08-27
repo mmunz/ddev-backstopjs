@@ -12,7 +12,11 @@ ARG uid
 ARG gid
 RUN userdel -r node
 RUN (groupadd --gid $gid "$username" || groupadd "$username" || true) && (useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' --uid $uid "$username" || useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' "$username" || useradd  -l -m -s "/bin/bash" --gid "$gid" --comment '' "$username" || useradd -l -m -s "/bin/bash" --comment '' $username )
-RUN echo "$username     ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Add sudo and sudoers in manner similar to other ddev containers
+RUN apt update && apt install -y sudo; apt clean -qq && rm -rf /var/lib/apt/lists/*; echo "ALL ALL=NOPASSWD: ALL" > /etc/sudoers.d/ddev-backstop && chmod 440 /etc/sudoers.d/ddev-backstop
 
-RUN npm install -g minimist
+RUN npm install -g minimist && npm cache clean --force
+
+# Install playwright browsers
+RUN npx playwright install-deps && npm cache clean --force; apt clean -qq && rm -rf /var/lib/apt/lists/*

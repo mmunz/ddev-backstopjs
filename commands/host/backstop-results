@@ -8,6 +8,7 @@
 
 case $OSTYPE in
   linux-gnu)
+    cd `git rev-parse --show-toplevel`
     xdg-open tests/backstop/backstop_data/html_report/index.html
     ;;
   "darwin"*)

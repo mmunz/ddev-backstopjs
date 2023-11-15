@@ -22,7 +22,7 @@ services:
     init: true
     entrypoint: [ /entrypoint.sh ]
     volumes:
-      - ../tests/backstop:/src
+      - ../tests:/src/tests
       - .:/mnt/ddev_config:ro
     shm_size: 1gb
     environment:

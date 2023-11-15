@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#ddev-generated
+
+## Description: Run backstop environemnt tests
+## Usage: backstop-env [env] [args]
+## Example: "ddev backstop-env pro version"
+## ExecRaw: true
+
+if [ "$1" == "openReport" -o "$1" == "remote" ]; then
+  echo "This does not work for backstop in ddev"
+  exit 1
+fi
+
+cd /src/tests/environment/$1/backstopjs
+NODE_PATH="/usr/local/lib/node_modules/" backstop "${@:2}"

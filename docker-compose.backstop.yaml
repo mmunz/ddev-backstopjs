@@ -11,11 +11,11 @@ services:
     build:
       context: './backstopBuild'
       args:
-        BASE_IMAGE: backstopjs/backstopjs:6.2.2
+        BASE_IMAGE: backstopjs/backstopjs:6.3.3
         username: $USER
         uid: $DDEV_UID
         gid: $DDEV_GID
-    image: backstopjs/backstopjs:6.2.2-${DDEV_SITENAME}-built
+    image: backstopjs/backstopjs:6.3.3-${DDEV_SITENAME}-built
     user:  '$DDEV_UID:$DDEV_GID'
     # Add init to reap Chrome processes, as noted at
     # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker

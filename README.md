@@ -1,8 +1,8 @@
-[![tests](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
+[![tests](https://github.com/Metadrop/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/Metadrop/ddev-backstopjs/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
 
 ## ddev-backstopjs
 
-This is a ddev-addon for [backstop.js](https://github.com/garris/BackstopJS), a visual regression testing tool.
+This is a ddev-addon fork from [mmunz/ddev-backstopjs](https://github.com/mmunz/ddev-backstopjs) ddev-addon for [backstop.js](https://github.com/garris/BackstopJS), a visual regression testing tool.
 Backstop is executed in a docker container based on the official [backstopjs docker image](https://hub.docker.com/r/backstopjs/backstopjs).
 
 This addon just provides the basics to run backstopjs. No backstopjs config is included. See below how to generate a
@@ -13,7 +13,7 @@ config and for links to a more advanced example config.
 Install this addon with
 
 ```shell
-ddev get mmunz/ddev-backstopjs
+ddev get metadrop/ddev-backstopjs
 ```
 
 After that you need to restart the ddev project:

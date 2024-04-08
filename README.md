@@ -1,8 +1,20 @@
 [![tests](https://github.com/Metadrop/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/Metadrop/ddev-backstopjs/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
 
-## ddev-backstopjs
+* [What is DDEV Backstopjs Add-on?](#what-is-ddev-backstopjs-add-on)
+* [Getting started](#getting-started)
+* [Using backstopjs](#using-backstopjs)
+  * [Configuration](#configuration)
+  * [Run tests](#run-tests)
+  * [View test results](#view-test-results)
+* [Changes to the original docker image](#changes-to-the-original-docker-image)
+* [Advanced](#advanced)
+  * [How to add additional hostnames?](#how-to-add-additional-hostnames)
+  * [Change backstop tests directory](#change-backstop-tests-directory)
 
-This is a ddev-addon fork from [mmunz/ddev-backstopjs](https://github.com/mmunz/ddev-backstopjs) ddev-addon for [backstop.js](https://github.com/garris/BackstopJS), a visual regression testing tool.
+
+## What is DDEV Backstopjs Add-on?
+
+This is a ddev-addon for [backstop.js](https://github.com/garris/BackstopJS) based on [mmunz](https://github.com/mmunz/ddev-backstopjs) addon but optimized for Aljibe, a visual regression testing tool.
 Backstop is executed in a docker container based on the official [backstopjs docker image](https://hub.docker.com/r/backstopjs/backstopjs).
 
 This addon just provides the basics to run backstopjs. No backstopjs config is included. See below how to generate a
@@ -13,7 +25,7 @@ config and for links to a more advanced example config.
 Install this addon with
 
 ```shell
-ddev get metadrop/ddev-backstopjs
+ddev get Metadrop/ddev-backstopjs
 ```
 
 After that you need to restart the ddev project:
@@ -34,7 +46,7 @@ By default, the backstop tests are expected in $DDEV_APPDIR/tests/backstop.
 
 Provide your own backstop.js or backstop.json configs there.
 
-Hint: have a look at my example [backstopjs-config](https://github.com/mmunz/backstopjs-config) 
+Hint: have a look at the example from mmunz [backstopjs-config](https://github.com/mmunz/backstopjs-config) 
 
 Alternatively you can create a simple backstop.json config with:
 

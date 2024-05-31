@@ -104,8 +104,8 @@ For that add a file `docker-compose.external_links.yaml` to your project which s
 services:
   chrome: &domains
     external_links:
-      - "myproject.ddev.site:myproject"
-      - "myproject2.ddev.site:myproject2"
+      - "ddev-router:myproject.ddev.site"
+      - "ddev-router:myproject2.ddev.site"
   firefox:
     <<: *domains
 ```

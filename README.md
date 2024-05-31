@@ -102,12 +102,10 @@ For that add a file `docker-compose.external_links.yaml` to your project which s
 
 ```yaml
 services:
-  chrome: &domains
+  backstop:
     external_links:
       - "ddev-router:myproject.ddev.site"
       - "ddev-router:myproject2.ddev.site"
-  firefox:
-    <<: *domains
 ```
 
 See: [ddev FAQ: Can different projects communicate with each other?](https://ddev.readthedocs.io/en/latest/users/usage/faq/#features-requirements)

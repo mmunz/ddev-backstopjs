@@ -18,4 +18,4 @@ project_files:
 post_install_actions:
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."
- - echo "If you need to set a custom backstopjs version, add an .env file inside .ddev folder with variable $BACKSTOPJS_VERSION set"
+ - echo "If you need to set a custom backstopjs version, add an .env file inside .ddev folder with variable BACKSTOPJS_VERSION set"

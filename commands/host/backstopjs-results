@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#ddev-generated
+
+## Description: Launch a browser with latest backstop results
+## Usage: backstop-results
+## Example: "ddev backstop-results"
+
+REPORT_PATH=tests/functional/backstopjs/backstop_data/html_report/index.html
+if ! [ -f $REPORT_PATH ]; then
+  echo "Report does not exist."
+  exit 0;
+fi
+
+case $OSTYPE in
+  linux-gnu)
+    xdg-open
+    ;;
+  "darwin"*)
+    open tests/functional/backstopjs/backstop_data/html_report/index.html
+    ;;
+  "win*"* | "msys"*)
+    start tests/functional/backstopjs/backstop_data/html_report/index.html
+    ;;
+esac

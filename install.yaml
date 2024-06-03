@@ -16,5 +16,6 @@ project_files:
 - commands/
 
 post_install_actions:
+
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."

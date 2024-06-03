@@ -1,9 +1,9 @@
 setup() {
   set -eu -o pipefail
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )/.."
-  export TESTDIR=~/tmp/test-addon-backstop
+  export TESTDIR=~/tmp/test-addon-backstopjs
   mkdir -p $TESTDIR
-  export PROJNAME=test-addon-backstop
+  export PROJNAME=test-addon-backstopjs
   export DDEV_NON_INTERACTIVE=true
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
@@ -26,12 +26,12 @@ teardown() {
   ddev restart
 
   # backstop is installed and can show its version
-  ddev backstop version | grep 'Command "version" successfully executed'
+  ddev backstopjs version | grep 'Command "version" successfully executed'
 
   # openReport and remote commands show an error message
   set +o pipefail
-  ddev backstop openReport | grep -q 'This does not work for backstop in ddev'
-  ddev backstop remote | grep -q 'This does not work for backstop in ddev'
+  ddev backstopjs openReport | grep -q 'This does not work for backstop in ddev'
+  ddev backstopjs remote | grep -q 'This does not work for backstop in ddev'
 }
 
 #@test "install from release" {

@@ -2,9 +2,9 @@
 
 #ddev-generated
 
-## Description: Run backstop
-## Usage: backstop [args]
-## Example: "ddev backstop version"
+## Description: Run backstopjs
+## Usage: backstopjs [args]
+## Example: "ddev backstopjs version"
 ## ExecRaw: true
 
 if [ "$1" == "openReport" -o "$1" == "remote" ]; then

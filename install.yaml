@@ -1,4 +1,4 @@
-name: ddev-backstopjs
+name: backstopjs
 
 pre_install_actions:
   - test -d ${DDEV_APPROOT}/tests/backstop || mkdir -p ${DDEV_APPROOT}/tests/backstop
@@ -13,8 +13,7 @@ pre_install_actions:
 project_files:
 - docker-compose.backstop.yaml
 - backstopBuild/
-- commands/backstop/backstop
-- commands/host/backstop-results
+- commands/
 
 post_install_actions:
  - echo "Install finished. Please restart ddev with 'ddev restart'"

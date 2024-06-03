@@ -11,11 +11,11 @@ pre_install_actions:
 # if it hasn't been modified by the user.
 # DDEV environment variables can be interpolated into these filenames
 project_files:
-- docker-compose.backstop.yaml
-- backstopBuild/
+- docker-compose.backstopjs.yaml
+- backstopjsBuild/
 - commands/
 
 post_install_actions:
-
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."
+ - echo "If you need to set a custom backstopjs version, add an .env file inside .ddev folder with variable $BACKSTOPJS_VERSION set"

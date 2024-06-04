@@ -14,12 +14,12 @@ fi
 
 case $OSTYPE in
   linux-gnu)
-    xdg-open
+    xdg-open $REPORT_PATH
     ;;
   "darwin"*)
-    open tests/functional/backstopjs/backstop_data/html_report/index.html
+    open $REPORT_PATH
     ;;
   "win*"* | "msys"*)
-    start tests/functional/backstopjs/backstop_data/html_report/index.html
+    start $REPORT_PATH
     ;;
 esac

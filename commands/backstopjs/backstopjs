@@ -7,13 +7,14 @@
 ## Example: "ddev backstopjs version"
 ## ExecRaw: true
 
-FOLDER=${$1:-local}
-ARGS=${@:2}
+FOLDER=$1
+
+ARGS=${*:2}
 
 if [ "$1" == "openReport" -o "$1" == "remote" ]; then
   echo "This does not work for backstop in ddev"
   exit 1
 fi
 
-cd /src/tests/backstopjs/$FOLDER
+cd /src/tests/$FOLDER || exit 1
 NODE_PATH="/usr/local/lib/node_modules/" backstop "$ARGS"

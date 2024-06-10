@@ -31,7 +31,7 @@ services:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: ${DDEV_APPROOT}
     volumes:
-      - ../tests:/src/tests
+      - ../tests/backstopjs:/src/tests
       - .:/mnt/ddev_config:ro
       - ddev-global-cache:/mnt/ddev-global-cache
     networks:

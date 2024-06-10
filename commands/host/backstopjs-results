@@ -6,7 +6,10 @@
 ## Usage: backstop-results
 ## Example: "ddev backstop-results"
 
-REPORT_PATH=tests/functional/backstopjs/backstop_data/html_report/index.html
+FOLDER=${1:-local}
+
+REPORT_PATH=tests/backstopjs/$FOLDER/backstop_data/html_report/index.html
+
 if ! [ -f $REPORT_PATH ]; then
   echo "Report does not exist."
   exit 0;

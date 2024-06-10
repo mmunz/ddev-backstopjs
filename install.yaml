@@ -1,15 +1,10 @@
 name: backstopjs
 
 pre_install_actions:
-  - test -d ${DDEV_APPROOT}/tests/functional/backstopjs || mkdir -p ${DDEV_APPROOT}/tests/functional/backstopjs
-  - test -f "${DDEV_APPROOT}/tests/functional/backstopjs/.gitignore" || printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/functional/backstopjs/.gitignore
-  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/functional/backstopjs/.gitignore && printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/functional/backstopjs/.gitignore
+  - test -d ${DDEV_APPROOT}/tests/backstopjs/local || mkdir -p ${DDEV_APPROOT}/tests/backstopjs/local
+  - test -f "${DDEV_APPROOT}/tests/backstopjs/local/.gitignore" || printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore
+  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore && printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore
 
-
-# list of files and directories listed that are copied into project .ddev directory
-# Each file should contain #ddev-generated so it can be replaced by a later `ddev get`
-# if it hasn't been modified by the user.
-# DDEV environment variables can be interpolated into these filenames
 project_files:
 - docker-compose.backstopjs.yaml
 - backstopjsBuild/

@@ -1,16 +1,14 @@
 name: backstopjs
 
-pre_install_actions:
-  - test -d ${DDEV_APPROOT}/tests/backstopjs/local || mkdir -p ${DDEV_APPROOT}/tests/backstopjs/local
-  - test -f "${DDEV_APPROOT}/tests/backstopjs/local/.gitignore" || printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore
-  - grep -q "## ddev-generated" ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore && printf "## ddev-generated\n**/bitmaps_test\n**/html_report\n" > ${DDEV_APPROOT}/tests/backstopjs/local/.gitignore
-
 project_files:
 - docker-compose.backstopjs.yaml
 - backstopjsBuild/
+- backstopjsFiles
 - commands/
 
 post_install_actions:
+ - test -d ../tests/backstopjs || mkdir -p ../tests/backstopjs
+ - test -d ../tests/backstopjs/local || mv backstopjsFiles/local ../tests/backstopjs/
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."
  - echo "If you need to set a custom backstopjs version, add an .env file inside .ddev folder with variable BACKSTOPJS_VERSION set"

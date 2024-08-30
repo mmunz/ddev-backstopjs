@@ -1,0 +1,64 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 375,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "label": "Desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "http://web/",
+      "selectorExpansion": true,
+      "readySelector": "body",
+      "misMatchThreshold" : 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "bitmaps_reference",
+    "bitmaps_test": "bitmaps_test",
+    "engine_scripts": "engine_scripts",
+    "html_report": "html_report",
+    "ci_report": "ci_report"
+  },
+  "report": [
+    "browser",
+    "CI"
+  ],
+  "ci": {
+    "format" :  "junit" ,
+    "testSuiteName" :  "backstopJS"
+  },
+  "engine": "puppeteer",
+  "engineOptions": {
+    "ignoreHTTPSErrors": true,
+    "slowMo": 500,
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-gpu",
+      "--force-device-scale-factor=1",
+      "--disable-infobars=true",
+      "--hide-scrollbars"
+    ]
+
+  },
+  "asyncCaptureLimit": 10,
+  "asyncCompareLimit": 30,
+  "debug": false,
+  "debugWindow": false
+}

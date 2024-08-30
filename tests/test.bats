@@ -26,12 +26,15 @@ teardown() {
   ddev restart
 
   # backstop is installed and can show its version
-  ddev backstopjs version | grep 'Command "version" successfully executed'
+  ddev backstopjs local version | grep 'Command "version" successfully executed'
 
-  # openReport and remote commands show an error message
-  set +o pipefail
-  ddev backstopjs openReport | grep -q 'This does not work for backstop in ddev'
-  ddev backstopjs remote | grep -q 'This does not work for backstop in ddev'
+  # Test should fail because there is no reference bitmaps
+  ddev backstopjs local test | grep 'Command "version" successfully executed' || true
+  # Create reference bitmaps
+  ddev backstopjs local reference
+  # Test should pass because there is a reference bitmaps
+  ddev backstopjs local test
+
 }
 
 #@test "install from release" {

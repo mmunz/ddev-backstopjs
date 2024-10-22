@@ -1,5 +1,4 @@
 #ddev-generated
-version: '3.7'
 
 services:
   # This is the service name used when running ddev commands accepting the

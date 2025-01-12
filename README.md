@@ -13,7 +13,7 @@ config and for links to a more advanced example config.
 Install this addon with
 
 ```shell
-ddev get mmunz/ddev-backstopjs
+ddev add-on get mmunz/ddev-backstopjs
 ```
 
 After that you need to restart the ddev project:
@@ -34,7 +34,7 @@ By default, the backstop tests are expected in $DDEV_APPDIR/tests/backstop.
 
 Provide your own backstop.js or backstop.json configs there.
 
-Hint: have a look at my example [backstopjs-config](https://github.com/mmunz/backstopjs-config) 
+Hint: have a look at my example [backstopjs-config](https://github.com/mmunz/backstopjs-config)
 
 Alternatively you can create a simple backstop.json config with:
 
@@ -73,7 +73,7 @@ ddev backstop-results
 Alternatively open the generated HTML-Report with your browser, e.g.:
 
 ```shell
-open tests/backstop/backstop_data/_mytestproject_/html_report/index.html 
+open tests/backstop/backstop_data/_mytestproject_/html_report/index.html
 ```
 
 ## Changes to the original docker image

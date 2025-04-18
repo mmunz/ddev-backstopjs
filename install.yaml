@@ -19,6 +19,13 @@ project_files:
 post_install_actions:
  - |
     #ddev-nodisplay
+    #ddev-description:Checking docker-compose.backstop_extras.yaml for changes
+    if [ -f docker-compose.backstop_extras.yaml ] && ! grep -q '#ddev-generated' docker-compose.backstop_extras.yaml; then
+      echo "Existing docker-compose.backstop_extras.yaml does not have #ddev-generated, so can't be updated"
+      exit 2
+    fi
+ - |
+    #ddev-nodisplay
     #ddev-description:Adding all hostnames to the backstop container to make them available
     cat <<-END >docker-compose.backstop_extras.yaml
     #ddev-generated

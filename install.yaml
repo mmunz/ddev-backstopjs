@@ -17,5 +17,18 @@ project_files:
 - commands/host/backstop-results
 
 post_install_actions:
+ - |
+    #ddev-nodisplay
+    #ddev-description:Adding all hostnames to the backstop container to make them available
+    cat <<-END >docker-compose.backstop_extras.yaml
+    #ddev-generated
+    services:
+      backstop:
+        external_links:
+        {{- $backstop_hostnames := splitList "," (env "DDEV_HOSTNAME") -}}
+        {{- range $i, $n := $backstop_hostnames }}
+          - "ddev-router:{{- replace (env "DDEV_TLD") "\\${DDEV_TLD}" (replace (env "DDEV_PROJECT") "\\${DDEV_PROJECT}" $n) -}}"
+        {{- end }}
+    END
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."

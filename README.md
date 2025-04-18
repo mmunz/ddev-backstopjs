@@ -22,9 +22,12 @@ After that you need to restart the ddev project:
 ddev restart
 ```
 
-**Note: If you haven't downloaded the backstopjs base image before, then it will be downloaded when ddev is restarted.
-The backstopjs/backstopjs is about 2.6GB, so this may take some time.**
+> [!NOTE]
+> If you haven't downloaded the backstopjs base image before, then it will be downloaded when ddev is restarted.
+> The backstopjs/backstopjs is about 2.6GB, so this may take some time.
 
+> [!WARNING]
+> If you change `additional_hostnames` or `additional_fqdns`, you have to re-run `ddev add-on get mmunz/ddev-backstopjs`
 
 ## Using backstopjs
 

@@ -39,3 +39,15 @@ post_install_actions:
     END
  - echo "Install finished. Please restart ddev with 'ddev restart'"
  - echo "After that create your backstop config, e.g. run ddev backstop init."
+
+removal_actions:
+  - |
+    #ddev-nodisplay
+    #ddev-description:Remove docker-compose.backstop_extras.yaml file
+    if [ -f docker-compose.backstop_extras.yaml ]; then
+      if grep -q '#ddev-generated' docker-compose.backstop_extras.yaml; then
+        rm -f docker-compose.backstop_extras.yaml
+      else
+        echo "Unwilling to remove '$DDEV_APPROOT/.ddev/docker-compose.backstop_extras.yaml' because it does not have #ddev-generated in it; you can manually delete it if it is safe to delete."
+      fi
+    fi

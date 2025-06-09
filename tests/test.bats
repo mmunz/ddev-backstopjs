@@ -34,6 +34,7 @@ teardown() {
   ddev backstop remote | grep -q 'This does not work for backstop in ddev'
 }
 
+# bats test_tags=release
 #@test "install from release" {
 #  set -eu -o pipefail
 #  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )

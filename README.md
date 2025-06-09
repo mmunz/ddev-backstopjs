@@ -1,4 +1,4 @@
-[![tests](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
+[![tests](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml)
 
 ## ddev-backstopjs
 
@@ -97,7 +97,7 @@ The entrypoint is responsible for:
 
 ### How to add additional hostnames?
 
-If you want to test hosts not configured in the web container, you need to use external_links in the service containers. 
+If you want to test hosts not configured in the web container, you need to use external_links in the service containers.
 For that add a file `docker-compose.external_links.yaml` to your project which should look like this:
 
 ```yaml

@@ -1,6 +1,7 @@
 [![add-on registry](https://img.shields.io/badge/DDEV-Add--on_Registry-blue)](https://addons.ddev.com)
 [![tests](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml/badge.svg)](https://github.com/mmunz/ddev-backstopjs/actions/workflows/tests.yml)
 [![last commit](https://img.shields.io/github/last-commit/mmunz/ddev-backstopjs)](https://github.com/mmunz/ddev-backstopjs/commits)
+[![release](https://img.shields.io/github/v/release/mmunz/ddev-backstopjs)](https://github.com/mmunz/ddev-backstopjs/releases/latest)
 
 ## ddev-backstopjs
 

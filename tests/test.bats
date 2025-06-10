@@ -39,6 +39,13 @@ setup() {
   echo "# ddev started at $(date)" >&3
 }
 
+health_checks() {
+  # backstop is installed and can show its version
+  run ddev backstop version
+  assert_success
+  assert_output --partial 'Command "version" successfully executed'
+}
+
 teardown() {
   set -eu -o pipefail
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1
@@ -53,9 +60,8 @@ teardown() {
   assert_success
   ddev restart
 
-  # backstop is installed and can show its version
-  run ddev backstop version
-  assert_output --partial 'Command "version" successfully executed'
+  # Check service works
+  health_checks
 
   # openReport and remote commands show an error message
   set +o pipefail

@@ -72,12 +72,14 @@ teardown() {
 }
 
 # bats test_tags=release
-#@test "install from release" {
-#  set -eu -o pipefail
-#  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-#  echo "# ddev add-on get drud/ddev-addon-template with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-#  ddev add-on get drud/ddev-addon-template
-#  ddev restart >/dev/null
-#  # Do something useful here that verifies the add-on
-#  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-#}
+@test "install from release" {
+  set -eu -o pipefail
+  echo "# ddev add-on get ${GITHUB_REPO} with project ${PROJNAME} in $(pwd)" >&3
+  run ddev add-on get "${GITHUB_REPO}"
+  assert_success
+  run ddev restart -y
+  assert_success
+
+  # Check service works
+  health_checks
+}
